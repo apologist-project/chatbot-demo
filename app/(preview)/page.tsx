@@ -225,16 +225,14 @@ export default function Home() {
             <div className="border rounded-lg p-6 flex flex-col gap-4 text-zinc-500 text-sm dark:text-zinc-400 dark:border-zinc-700">
               <p className="flex flex-row justify-center gap-4 items-center text-zinc-900 dark:text-zinc-50">
                 <VercelIcon />
-                <span>+</span>
-                <AttachmentIcon />
               </p>
-              <p>
-                The useChat hook supports sending attachments along with
-                messages as well as rendering previews on the client. This can
-                be useful for building applications that involve sending images,
-                files, and other media content to the AI provider.
-              </p>
-              <p>
+              {/*<p>*/}
+              {/*  The useChat hook supports sending attachments along with*/}
+              {/*  messages as well as rendering previews on the client. This can*/}
+              {/*  be useful for building applications that involve sending images,*/}
+              {/*  files, and other media content to the AI provider.*/}
+              {/*</p>*/}
+              <p className="text-center">
                 {" "}
                 Learn more about the{" "}
                 <Link
@@ -311,16 +309,16 @@ export default function Home() {
 
           <div className="flex items-center w-full md:max-w-[500px] max-w-[calc(100dvw-32px)] bg-zinc-100 dark:bg-zinc-700 rounded-full px-4 py-2">
             {/* Upload Button */}
-            <button
-              type="button"
-              onClick={handleUploadClick}
-              className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-zinc-100 focus:outline-none mr-3"
-              aria-label="Upload Files"
-            >
-              <span className="w-5 h-5">
-                <AttachmentIcon aria-hidden="true" />
-              </span>
-            </button>
+            {/*<button*/}
+            {/*  type="button"*/}
+            {/*  onClick={handleUploadClick}*/}
+            {/*  className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-zinc-100 focus:outline-none mr-3"*/}
+            {/*  aria-label="Upload Files"*/}
+            {/*>*/}
+            {/*  <span className="w-5 h-5">*/}
+            {/*    <AttachmentIcon aria-hidden="true" />*/}
+            {/*  </span>*/}
+            {/*</button>*/}
 
             {/* Message Input */}
             <input

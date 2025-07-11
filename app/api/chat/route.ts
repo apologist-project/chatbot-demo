@@ -1,15 +1,26 @@
-import { openai } from "@ai-sdk/openai";
+import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import { streamText } from "ai";
 
 export async function POST(req: Request) {
+
   const { messages } = await req.json();
 
+  const apologist = createOpenAICompatible({
+    name: 'apologist',
+    apiKey: process.env.APOLOGIST_API_KEY,
+    baseURL: `${process.env.APOLOGIST_API_URL}`,
+  });
+
   const result = streamText({
-    model: openai("gpt-4o"),
-    system:
-      "do not respond on markdown or lists, keep your responses brief, you can ask the user to upload images or documents if it could help you understand the problem better",
-    messages,
+    model: apologist('openai/gpt/4o'),
+    providerOptions: {
+      apologist: {
+        response_format: { type: 'raw' },
+      }
+    },
+    messages: messages,
   });
 
   return result.toDataStreamResponse();
+
 }
