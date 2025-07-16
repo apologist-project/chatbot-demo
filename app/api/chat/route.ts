@@ -13,11 +13,6 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: apologist('openai/gpt/4o'),
-    providerOptions: {
-      apologist: {
-        response_format: { type: 'raw' },
-      }
-    },
     messages: messages,
   });
 
